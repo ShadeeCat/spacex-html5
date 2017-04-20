@@ -1,5 +1,6 @@
 :root {
 	--white-color: #fff;
+	--yellow-color: #CCAC55;
 }
 body { 
 	margin: 0;
@@ -12,7 +13,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-	background-color: black;
+	background-color: #181c1f;
 }
 
 header nav {
@@ -21,15 +22,48 @@ header nav {
 	align-items: center;
 }
 
-header nav a {padding: 0 .5rem;}
+header nav a {
+	position: relative;
+	padding: 0 .5rem;
+	border-bottom: 2px solid transparent;
+	transition: border-bottom .3s;
+}
+.navLeft a:hover {
+	border-color: var(--yellow-color);
+}
+/* Another implementation */
+/* header nav a:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	width: 100%;
+	height: 2px;
+	background-color: transparent;
+}
+header nav a:hover:after {
+	background-color: var(--yellow-color);
+} */
 .navLeft {
 	/* margin-right: auto; */
 	color: white;
 	padding-left: 15rem;
 }
+.navLeft .logo{border-bottom: none;}
+
 .navRight {
     color: #8b939b;
     padding-right: 18rem;
+    font-size: 14px;
+}
+.navRight:last-child a:hover {
+	box-shadow: inset 0px 0px 4px 4px rgba(255,255,255,.5);
+}
+.navRight a:last-child{
+	background-color: black;
+	padding: 6px 12px 5px;
+	border-radius: 16px;
+	transition: all 0.2s;
 }
 
 section.mainPic {
@@ -53,7 +87,11 @@ section.mainPic .bottomPic {
 	background-color: rgba(0, 0, 0, .5);
 	box-sizing: border-box;
 }
-section.mainPic .bottomPic a {margin-right: 3rem;color: white;}
+section.mainPic .bottomPic a {
+	margin-right: 3rem;color: white;
+	font-size: 2rem;
+}
+section.mainPic .bottomPic a:hover {text-decoration: underline;}
 section.mainPic .bottomPic button {
 	padding: .5rem 2rem;
 	border-radius: 2px;
@@ -63,6 +101,10 @@ section.mainPic .bottomPic button {
 }
 section.mainPic .bottomPic button:hover {border-color: orange;}
 /* section.mainPic .bottomPic button:hover {box-shadow: inset 0px 0px 2px 2px orange;} */
+section.content {
+    /* box-shadow: inset 0px 50px 50px -30px rgba(0,0,0,.5); */
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.1) 30%, #fff 70%);
+}
 section.content .info {
 	display: flex;
 	justify-content: center;
@@ -70,16 +112,33 @@ section.content .info {
 }
 section .conteiner {	
     display: flex;
+    margin: 0 3rem;
     padding: 10rem;
 }
-section .conteiner figure {}
+section .conteiner figure {
+	padding: 20px;
+	box-shadow: 0 1px 5px 0 rgba(0,0,0,0.25);
+}
 section .conteiner figure img {width: 100%;margin-bottom: 1rem;}
-section .conteiner figure figcaption span {display: block;}
-
+section .conteiner figure figcaption:hover {
+	text-decoration: underline;
+}
+section .conteiner figure figcaption span {
+	display: block;
+	padding-top: 1rem;
+	color: blue;
+}
+section .conteiner figure figcaption span:after {
+	    content: "→";
+    	vertical-align: top;
+    	padding-left: 6px;
+}
 footer {padding: 1rem 0;}
+
 footer .footerTop {
 	display: flex;
-	background-color: #4b5256;
+	background-color: #181c1f;
+	padding: 2rem 14rem;
 }
 footer section.footerTop .footer-equal-block {
 	position: relative;
@@ -100,11 +159,18 @@ footer section.footerTop .footer-equal-block a {
 	display: block;
 	width: 100%;
 	margin-bottom: .4rem;
+	color: #8b939b;
+	font-size: 12px;
 }
 footer .footerBottom {
 	display: flex;
 	background-color: black;
 	color: currentcolor;
+}
+footer .footerTop .liTop, p {
+    font-size: 11px;
+    padding-bottom: 0.5rem;
+    color: white;
 }
 #popup {
 	display: flex;

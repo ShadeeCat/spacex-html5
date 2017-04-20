@@ -1,9 +1,25 @@
 var button = document.querySelector('#btn');
-button.addEventListener('click', closePopup);
+button.addEventListener('click', createPopup);
 
-var closeBtn = document.querySelector('#close_btn');
-close_btn.addEventListener('click', closePopup);
+function createPopup() {
+	var popup = document.createElement('div');
+	popup.id = 'popup';
 
-function closePopup(e) {
-	document.querySelector('#popup').classList.toggle('hide');
+	var closeBtn = document.createElement('button');
+	closeBtn.id = 'close_btn';
+	closeBtn.textContent = '✖';
+	closeBtn.addEventListener('click', function closePopup(e) {
+		document.querySelector('#popup').remove();
+	});
+	popup.appendChild(closeBtn);
+
+	var iframe = document.createElement('iframe');
+	iframe.width="560";
+	iframe.height="315";
+	iframe.src="https://www.youtube.com/embed/xsZSXav4wI8?autoplay=1";
+	iframe.frameborder="0";
+	allowfullscreen=true;
+	popup.appendChild(iframe);
+
+	document.body.appendChild(popup);
 }
