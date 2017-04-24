@@ -4,9 +4,14 @@
 }
 body { 
 	margin: 0;
-    font-family: 'Brandon Grotesque','brandon-grotesque',Helvetica,sans-serif;
+    font-family: "Brandon Grotesque", brandon-grotesque, Helvetica, sans-serif;
 }
 a {text-decoration: none;color: currentcolor;}
+
+.centered {
+	
+}
+
 header {
 	display: flex;
 	flex-wrap: wrap;
@@ -113,7 +118,7 @@ section.content .info {
 section .conteiner {	
     display: flex;
     margin: 0 3rem;
-    padding: 10rem;
+    padding: 6rem 15rem;
 }
 section .conteiner figure {
 	padding: 20px;
@@ -126,14 +131,14 @@ section .conteiner figure figcaption:hover {
 section .conteiner figure figcaption span {
 	display: block;
 	padding-top: 1rem;
-	color: blue;
+	color: rgb(53, 105, 164);
 }
+
 section .conteiner figure figcaption span:after {
 	    content: "→";
     	vertical-align: top;
     	padding-left: 6px;
 }
-footer {padding: 1rem 0;}
 
 footer .footerTop {
 	display: flex;
@@ -150,7 +155,7 @@ footer section.footerTop .footer-equal-block:not(:first-child):before {
 	content: '';
 	position: absolute;left: 0;
 	width: 1px;height: 100%;
-	background-image: repeating-linear-gradient(to bottom, white, white 4px, black 4px, black 8px);
+	background-image: repeating-linear-gradient(to bottom, white, white 4px, transparent 4px, transparent 8px);
 }
 
 footer section.footerTop .footer-equal-block.corp p {margin-top: 0;margin-bottom: .4rem;}
@@ -162,16 +167,34 @@ footer section.footerTop .footer-equal-block a {
 	color: #8b939b;
 	font-size: 12px;
 }
-footer .footerBottom {
-	display: flex;
-	background-color: black;
-	color: currentcolor;
-}
 footer .footerTop .liTop, p {
     font-size: 11px;
     padding-bottom: 0.5rem;
     color: white;
 }
+footer .footerBottom {
+	display: flex;
+	height: 3rem;
+	background-color: rgb(14, 17, 18);
+	font-size: 12px;
+	flex-wrap: wrap;
+    align-items: center;
+}
+footer .footerBottom .bottomNav {
+	display: flex;
+	color: rgb(139, 147, 155);
+	padding-left: 14rem;
+}
+footer .footerBottom .bottomNav a {
+	 padding: 0 .5rem;
+}
+footer .footerBottom span {color: rgb(102, 102, 102);}
+footer .footerBottom .bottomNav .follow {
+	border-right: 1px solid currentcolor;
+	padding-right: .5rem;
+}
+footer .footerBottom .rightHolders {padding-left: 18rem;}
+
 #popup {
 	display: flex;
 	align-items: center;		
