@@ -9,16 +9,24 @@ body {
 a {text-decoration: none;color: currentcolor;}
 
 .centered {
-	
+	width: 80%;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+@media screen and (max-width: 776px) {
+	.centered {width: 100%;}
 }
 
+
 header {
+    padding: 1rem;
+	background-color: #181c1f;
+}
+header .centered {
 	display: flex;
 	flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-	background-color: #181c1f;
 }
 
 header nav {
@@ -52,13 +60,11 @@ header nav a:hover:after {
 .navLeft {
 	/* margin-right: auto; */
 	color: white;
-	padding-left: 15rem;
 }
 .navLeft .logo{border-bottom: none;}
 
 .navRight {
     color: #8b939b;
-    padding-right: 18rem;
     font-size: 14px;
 }
 .navRight:last-child a:hover {
@@ -105,45 +111,63 @@ section.mainPic .bottomPic button {
 	transition: box-shadow .5s;
 }
 section.mainPic .bottomPic button:hover {border-color: orange;}
+@media screen and (max-width: 766px) {
+	section.mainPic .bottomPic {text-align: center;}
+	section.mainPic .bottomPic a {margin-right: 0;margin-bottom: 1rem;}
+}
+
 /* section.mainPic .bottomPic button:hover {box-shadow: inset 0px 0px 2px 2px orange;} */
 section.content {
+	padding: 1rem;
     /* box-shadow: inset 0px 50px 50px -30px rgba(0,0,0,.5); */
     background-image: linear-gradient(to bottom, rgba(0,0,0,.1) 30%, #fff 70%);
+	text-align: center;
 }
-section.content .info {
+
+section.picsContent .centered {
 	display: flex;
-	justify-content: center;
-	padding-top: 2rem;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 5rem 0;
 }
-section .conteiner {	
-    display: flex;
-    margin: 0 3rem;
-    padding: 6rem 15rem;
+section.picsContent .centered a.figure-card {
+	width: 25%;
 }
-section .conteiner figure {
+section.picsContent .centered figure {
 	padding: 20px;
+	margin: 0;
 	box-shadow: 0 1px 5px 0 rgba(0,0,0,0.25);
 }
-section .conteiner figure img {width: 100%;margin-bottom: 1rem;}
-section .conteiner figure figcaption:hover {
+section.picsContent .centered figure img {width: 100%;margin-bottom: 1rem;}
+section.picsContent .centered figure figcaption:hover {
 	text-decoration: underline;
 }
-section .conteiner figure figcaption span {
+section.picsContent .centered figure figcaption span {
 	display: block;
 	padding-top: 1rem;
 	color: rgb(53, 105, 164);
 }
 
-section .conteiner figure figcaption span:after {
+section.picsContent .centered figure figcaption span:after {
 	    content: "→";
     	vertical-align: top;
     	padding-left: 6px;
 }
+@media screen and (max-width: 766px) {
+	section.picsContent .centered a.figure-card {
+		width: 80%;
+		padding: 1rem;
+		margin: 0 auto;
+	}
+}
 
-footer .footerTop {
-	display: flex;
+footer {}
+footer section.footerTop,
+footer section.footerBottom {padding: 1rem;}
+footer section.footerTop .centered, 
+footer section.footerBottom .centered {display: flex;}
+footer section.footerTop {
 	background-color: #181c1f;
-	padding: 2rem 14rem;
 }
 footer section.footerTop .footer-equal-block {
 	position: relative;
@@ -173,27 +197,26 @@ footer .footerTop .liTop, p {
     color: white;
 }
 footer .footerBottom {
-	display: flex;
-	height: 3rem;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	background-color: rgb(14, 17, 18);
 	font-size: 12px;
-	flex-wrap: wrap;
-    align-items: center;
 }
 footer .footerBottom .bottomNav {
 	display: flex;
 	color: rgb(139, 147, 155);
-	padding-left: 14rem;
 }
 footer .footerBottom .bottomNav a {
 	 padding: 0 .5rem;
 }
-footer .footerBottom span {color: rgb(102, 102, 102);}
+footer .footerBottom span {color: #666;}
 footer .footerBottom .bottomNav .follow {
 	border-right: 1px solid currentcolor;
 	padding-right: .5rem;
 }
-footer .footerBottom .rightHolders {padding-left: 18rem;}
+@media screen and (max-width: 766px) {
+
+}
 
 #popup {
 	display: flex;
